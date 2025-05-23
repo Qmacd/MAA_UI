@@ -1,4 +1,4 @@
-name: maa_env
+name: quant
 channels:
   - pytorch
   - nvidia

@@ -27,7 +27,7 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 conda env create -f environment.yml
 
 # 激活环境
-conda activate maa_env
+conda activate quant
 ```
 
 3. 配置GPU
@@ -118,5 +118,5 @@ conda env update -f environment.yml
 conda env export > environment.yml
 
 # 删除环境
-conda env remove -n maa_env
+conda env remove -n quant
 ``` 
