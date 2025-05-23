@@ -97,9 +97,9 @@
 
     .char-q { color: #FFD700; animation: glow 2s infinite; }
     .char-m { color: #4169E1; animation: glow 2s infinite 0.4s; }
-    .char-c { color: #FF4500; animation: glow 2s infinite 0.8s; }
     .char-a { color: #FFD700; animation: glow 2s infinite 1.2s; }
-    .char-d { color: #FF4500; animation: glow 2s infinite 1.6s; }
+    .char-c { color: #FF4500; animation: glow 2s infinite 1.6s; }
+    .char-d { color: #FF4500; animation: glow 2s infinite 0.8s; }
 
     @keyframes glow {
       0%, 100% { text-shadow: 0 0 10px rgba(255,255,255,0.5); }
@@ -769,10 +769,28 @@
         <div class="color-word">
           <span class="char-q">Q</span>
           <span class="char-m">m</span>
-          <span class="char-c">c</span>
           <span class="char-a">a</span>
+          <span class="char-c">c</span>
           <span class="char-d">d</span>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 添加GitHub信息 -->
+  <div class="github-info" style="background: #f8f9fa; padding: 15px; margin: 0 -20px 20px -20px; border-bottom: 1px solid #dee2e6;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <div class="project-info">
+        <h3 style="margin: 0; color: #2c3e50;">MAA (Multi-GAN Adversarial Analysis)</h3>
+        <p style="margin: 5px 0 0 0; color: #666;">基于multi GAN对抗训练的金融量化因子时序预测模型</p>
+      </div>
+      <div class="github-links">
+        <a href="https://github.com/Qmacd/MAA_UI" target="_blank" style="display: inline-flex; align-items: center; text-decoration: none; color: #2c3e50; padding: 8px 15px; border-radius: 5px; background: #fff; border: 1px solid #dee2e6; transition: all 0.3s ease;">
+          <svg height="20" width="20" viewBox="0 0 16 16" style="margin-right: 8px;">
+            <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+          </svg>
+          GitHub 仓库
+        </a>
       </div>
     </div>
   </div>
@@ -816,6 +834,38 @@
       <div class="custom-model-section">
         <h3>模型配置</h3>
         <p class="section-description">请为每个位置配置一个模型（自定义或系统预设）。系统需要3个模型进行对抗训练。</p>
+        
+        <!-- 添加格式说明 -->
+        <div class="format-guide" style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 1px solid #dee2e6;">
+          <h4 style="margin-top: 0; color: #2c3e50;">自定义模型格式说明：</h4>
+          <p style="margin-bottom: 10px;">上传的模型文件需要是一个Python类，继承自torch.nn.Module，并包含以下基本结构：</p>
+          <pre style="background: #2c3e50; color: #fff; padding: 15px; border-radius: 5px; overflow-x: auto;">
+class CustomModel(nn.Module):
+    def __init__(self, input_dim, hidden_dim, output_dim):
+        super().__init__()
+        self.input_dim = input_dim
+        self.hidden_dim = hidden_dim
+        self.output_dim = output_dim
+        
+        # 定义网络层
+        self.layer1 = nn.Linear(input_dim, hidden_dim)
+        self.layer2 = nn.Linear(hidden_dim, output_dim)
+        
+    def forward(self, x):
+        # x shape: [batch_size, sequence_length, input_dim]
+        x = self.layer1(x)
+        x = torch.relu(x)
+        x = self.layer2(x)
+        return x</pre>
+          <p style="margin-top: 10px; color: #666;">注意事项：</p>
+          <ul style="color: #666; margin-top: 5px;">
+            <li>模型必须继承自torch.nn.Module</li>
+            <li>必须包含__init__和forward方法</li>
+            <li>forward方法的输入x形状为[batch_size, sequence_length, input_dim]</li>
+            <li>输出形状应为[batch_size, sequence_length, output_dim]</li>
+            <li>建议使用PyTorch内置的层（如nn.Linear, nn.LSTM等）</li>
+          </ul>
+        </div>
         
         <div class="model-upload-grid">
           <!-- 模型1上传区域 -->
