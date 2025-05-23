@@ -13,11 +13,15 @@
 [![GitHub forks](https://img.shields.io/github/forks/Qmacd/MAA_UI?style=social)](https://github.com/Qmacd/MAA_UI/network/members)
 [![GitHub issues](https://img.shields.io/github/issues/Qmacd/MAA_UI)](https://github.com/Qmacd/MAA_UI/issues)
 
+[🌐 在线演示](http://maa.rengong-zhineng.com/) | [📚 文档](https://github.com/Qmacd/MAA_UI/wiki)
+
 </div>
 
 ## 📖 项目简介
 
 MAA是一个基于多生成器对抗网络（Multi-GAN）的金融时序预测框架，通过多个生成器的对抗训练来提高预测精度。该项目提供了完整的训练、预测和可视化功能。
+
+您可以通过访问我们的[在线演示网站](http://maa.rengong-zhineng.com/)来体验完整的模型训练和预测功能。
 
 ### ✨ 主要特点
 
