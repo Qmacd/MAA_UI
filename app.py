@@ -903,4 +903,4 @@ if __name__ == "__main__":
     print(f"系统初始状态: {resources}")
     
     # 启动服务器，开启debug模式
-    app.run(debug=True, host="127.0.0.1", port=7000, threaded=True)
+    app.run(debug=True, host="0.0.0.0", port=7000, threaded=True)
