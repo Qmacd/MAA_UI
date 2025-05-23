@@ -1,0 +1,290 @@
+2025-05-22 16:55:58,821  INFO  ARGS = {
+  "data_path": "database/zx_processed_黄金_day.csv",
+  "output_dir": "out_put",
+  "ckpt_dir": "out_put/ckpt",
+  "ckpt_path": "20250520_162930",
+  "N_pairs": 3,
+  "batch_size": 64,
+  "window_sizes": [
+    5,
+    10,
+    15
+  ],
+  "num_classes": 3,
+  "feature_groups": [
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      1
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      1
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      1
+    ]
+  ],
+  "target_columns": [
+    [
+      1
+    ]
+  ],
+  "device": [
+    "cpu"
+  ],
+  "random_seed": 3407,
+  "log_diff": false,
+  "start_timestamp": 31,
+  "end_timestamp": -1,
+  "generators": [
+    "transformer",
+    "transformer",
+    "transformer"
+  ],
+  "discriminators": null,
+  "distill_epochs": 1,
+  "cross_finetune_epochs": 5,
+  "lr": 2e-05,
+  "train_split": 0.7,
+  "num_epochs": 1
+}
+2025-05-22 16:55:58,822  INFO  开始预测过程
+2025-05-22 16:55:58,822  INFO  使用参数: {'data_path': 'database/zx_processed_黄金_day.csv', 'output_dir': 'out_put', 'ckpt_dir': 'out_put/ckpt', 'ckpt_path': '20250520_162930', 'N_pairs': 3, 'batch_size': 64, 'window_sizes': [5, 10, 15], 'num_classes': 3, 'feature_groups': [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 1], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 1], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 1]], 'target_columns': [[1]], 'device': ['cpu'], 'random_seed': 3407, 'log_diff': False, 'start_timestamp': 31, 'end_timestamp': -1, 'generators': ['transformer', 'transformer', 'transformer'], 'discriminators': None, 'distill_epochs': 1, 'cross_finetune_epochs': 5, 'lr': 2e-05, 'train_split': 0.7, 'num_epochs': 1}
+2025-05-22 16:55:58,822  INFO  初始化MAA模型...
+2025-05-22 16:55:58,826  INFO  处理输入数据...
+2025-05-22 16:55:58,826  INFO  127.0.0.1 - - [22/May/2025 16:55:58] "GET /stream HTTP/1.1" 200 -
+2025-05-22 16:55:58,851  INFO  初始化数据加载器...
+2025-05-22 16:55:58,992  INFO  初始化模型...
+2025-05-22 16:55:59,039  INFO  从 20250520_162930 加载模型权重...
+2025-05-22 16:55:59,040  INFO  开始预测...
+2025-05-22 16:56:58,161  INFO  127.0.0.1 - - [22/May/2025 16:56:58] "GET /stream HTTP/1.1" 200 -
+2025-05-22 16:56:58,188  INFO  127.0.0.1 - - [22/May/2025 16:56:58] "POST /predict HTTP/1.1" 200 -
+2025-05-22 16:56:58,190  INFO  ARGS = {
+  "data_path": "database/zx_processed_黄金_day.csv",
+  "output_dir": "out_put",
+  "ckpt_dir": "out_put/ckpt",
+  "ckpt_path": "20250520_162930",
+  "N_pairs": 3,
+  "batch_size": 64,
+  "window_sizes": [
+    5,
+    10,
+    15
+  ],
+  "num_classes": 3,
+  "feature_groups": [
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      1
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      1
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      1
+    ]
+  ],
+  "target_columns": [
+    [
+      1
+    ]
+  ],
+  "device": [
+    "cpu"
+  ],
+  "random_seed": 3407,
+  "log_diff": false,
+  "start_timestamp": 31,
+  "end_timestamp": -1,
+  "generators": [
+    "transformer",
+    "transformer",
+    "transformer"
+  ],
+  "discriminators": null,
+  "distill_epochs": 1,
+  "cross_finetune_epochs": 5,
+  "lr": 2e-05,
+  "train_split": 0.7,
+  "num_epochs": 1
+}
+2025-05-22 16:56:58,191  INFO  开始预测过程
+2025-05-22 16:56:58,191  INFO  使用参数: {'data_path': 'database/zx_processed_黄金_day.csv', 'output_dir': 'out_put', 'ckpt_dir': 'out_put/ckpt', 'ckpt_path': '20250520_162930', 'N_pairs': 3, 'batch_size': 64, 'window_sizes': [5, 10, 15], 'num_classes': 3, 'feature_groups': [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 1], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 1], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 1]], 'target_columns': [[1]], 'device': ['cpu'], 'random_seed': 3407, 'log_diff': False, 'start_timestamp': 31, 'end_timestamp': -1, 'generators': ['transformer', 'transformer', 'transformer'], 'discriminators': None, 'distill_epochs': 1, 'cross_finetune_epochs': 5, 'lr': 2e-05, 'train_split': 0.7, 'num_epochs': 1}
+2025-05-22 16:56:58,192  INFO  初始化MAA模型...
+2025-05-22 16:56:58,195  INFO  处理输入数据...
+2025-05-22 16:56:58,221  INFO  初始化数据加载器...
+2025-05-22 16:56:58,352  INFO  初始化模型...
+2025-05-22 16:56:58,380  INFO  从 20250520_162930 加载模型权重...
+2025-05-22 16:56:58,380  INFO  开始预测...
+2025-05-22 16:58:20,269  INFO   * Detected change in 'D:\\users\\pythonProject\\ai量化\\MAA_UI\\time_series_maa.py', reloading

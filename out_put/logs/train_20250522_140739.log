@@ -1,0 +1,148 @@
+2025-05-22 14:07:39,943  INFO  ARGS = {
+  "data_path": "database/zx_processed_黄金_day.csv",
+  "output_dir": "out_put",
+  "ckpt_dir": "out_put/ckpt",
+  "ckpt_path": "latest",
+  "N_pairs": 3,
+  "batch_size": 64,
+  "window_sizes": [
+    5,
+    10,
+    15
+  ],
+  "num_classes": 3,
+  "feature_groups": [
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ]
+  ],
+  "target_columns": [
+    [
+      1
+    ]
+  ],
+  "device": [
+    "cpu"
+  ],
+  "random_seed": 3407,
+  "log_diff": false,
+  "start_timestamp": 31,
+  "end_timestamp": -1,
+  "generators": [
+    "transformer",
+    "transformer",
+    "transformer"
+  ],
+  "discriminators": null,
+  "distill_epochs": 1,
+  "cross_finetune_epochs": 5,
+  "lr": 2e-05,
+  "train_split": 0.7,
+  "num_epochs": 1
+}
+2025-05-22 14:07:39,945  INFO  开始预测过程
+2025-05-22 14:07:39,946  INFO  使用参数: {'data_path': 'database/zx_processed_黄金_day.csv', 'output_dir': 'out_put', 'ckpt_dir': 'out_put/ckpt', 'ckpt_path': 'latest', 'N_pairs': 3, 'batch_size': 64, 'window_sizes': [5, 10, 15], 'num_classes': 3, 'feature_groups': [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]], 'target_columns': [[1]], 'device': ['cpu'], 'random_seed': 3407, 'log_diff': False, 'start_timestamp': 31, 'end_timestamp': -1, 'generators': ['transformer', 'transformer', 'transformer'], 'discriminators': None, 'distill_epochs': 1, 'cross_finetune_epochs': 5, 'lr': 2e-05, 'train_split': 0.7, 'num_epochs': 1}
+2025-05-22 14:07:39,947  INFO  初始化MAA模型...
+2025-05-22 14:07:39,950  INFO  处理输入数据...
+2025-05-22 14:07:39,950  INFO  127.0.0.1 - - [22/May/2025 14:07:39] "GET /stream HTTP/1.1" 200 -
+2025-05-22 14:07:39,993  INFO  初始化数据加载器...
+2025-05-22 14:07:40,155  INFO  初始化模型...
+2025-05-22 14:07:40,215  INFO  从 latest 加载模型权重...
+2025-05-22 14:07:40,216  ERROR  预测过程出错: ❌ Generator checkpoint not found at: latest\g{gru}\generator.pt
+Traceback (most recent call last):
+  File "D:\users\pythonProject\ai量化\MAA_UI\run_multi_gan_pred.py", line 87, in run_prediction
+    gca.load_model()
+  File "D:\users\pythonProject\ai量化\MAA_UI\time_series_maa.py", line 407, in load_model
+    raise FileNotFoundError(f"❌ Generator checkpoint not found at: {gen_path}")
+FileNotFoundError: ❌ Generator checkpoint not found at: latest\g{gru}\generator.pt
+2025-05-22 14:08:08,939  INFO   * Detected change in 'D:\\users\\pythonProject\\ai量化\\MAA_UI\\app.py', reloading

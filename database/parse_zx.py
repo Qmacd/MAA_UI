@@ -133,6 +133,7 @@ if 'WILLR' not in df.columns:
 
 # === 3.9 bias ===
 def bias(series: pd.Series, period: int) -> pd.Series:
+
     """
     计算 BIAS（乖离率）。
     :param series: pd.Series，通常为收盘价序列

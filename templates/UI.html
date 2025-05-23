@@ -4,95 +4,164 @@
   <meta charset="UTF-8">
   <title>模型训练与预测平台</title>
   <style>
+    :root {
+      --primary-color: #1e3c72;
+      --secondary-color: #2a5298;
+      --accent-color: #3498db;
+      --success-color: #2ecc71;
+      --text-color: #2c3e50;
+      --bg-color: #f5f6fa;
+      --card-bg: #ffffff;
+    }
+
     body {
       font-family: 'Microsoft YaHei', Arial, sans-serif;
       margin: 0;
       padding: 20px;
       font-size: 16px;
       line-height: 1.6;
-      color: #333;
-      background-color: #f5f6fa;
+      color: var(--text-color);
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
     }
 
     .header {
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
       color: white;
       padding: 20px;
       margin: -20px -20px 20px -20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
     }
 
     .header-left {
       flex: 1;
+      position: relative;
+      z-index: 1;
     }
 
     .header-right {
       text-align: right;
+      position: relative;
+      z-index: 1;
     }
 
     h1 {
-      font-size: 28px;
+      font-size: 32px;
       font-weight: bold;
       margin: 0;
       color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     }
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 15px;
     }
 
     .logo-text {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: bold;
       color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     }
 
     .color-word {
       display: flex;
       gap: 2px;
-      font-size: 32px;
+      font-size: 36px;
       font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     }
 
-    .char-q { color: #FFD700; }
-    .char-m { color: #4169E1; }
-    .char-c { color: #FF4500; }
-    .char-a { color: #FFD700; }
-    .char-d { color: #FF4500; }
+    .char-q { color: #FFD700; animation: glow 2s infinite; }
+    .char-m { color: #4169E1; animation: glow 2s infinite 0.4s; }
+    .char-c { color: #FF4500; animation: glow 2s infinite 0.8s; }
+    .char-a { color: #FFD700; animation: glow 2s infinite 1.2s; }
+    .char-d { color: #FF4500; animation: glow 2s infinite 1.6s; }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+      50% { text-shadow: 0 0 20px rgba(255,255,255,0.8); }
+    }
 
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
+      box-sizing: border-box;
+      width: 100%;
     }
 
     .parameter-section {
-      background: white;
+      background: var(--card-bg);
       margin: 20px 0;
       padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .parameter-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
     }
 
     .parameter-section h2 {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: bold;
       margin: 0 0 20px 0;
-      color: #2c3e50;
+      color: var(--text-color);
       border-bottom: 2px solid #eee;
       padding-bottom: 10px;
+      position: relative;
+    }
+
+    .parameter-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: var(--accent-color);
+      transition: width 0.3s ease;
+    }
+
+    .parameter-section:hover h2::after {
+      width: 100px;
     }
 
     label {
       display: block;
       margin: 15px 0 5px;
       font-size: 16px;
-      color: #34495e;
+      color: var(--text-color);
+      font-weight: 500;
     }
 
     input[type="text"], 
@@ -100,72 +169,104 @@
     select {
       width: 100%;
       max-width: 500px;
-      padding: 10px 12px;
+      padding: 12px 15px;
       font-size: 16px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
       margin: 5px 0;
-      transition: border-color 0.3s;
+      transition: all 0.3s ease;
+      background: #f8f9fa;
     }
 
     input[type="text"]:focus, 
     input[type="number"]:focus,
     select:focus {
-      border-color: #3498db;
+      border-color: var(--accent-color);
       outline: none;
-      box-shadow: 0 0 0 2px rgba(52,152,219,0.2);
+      box-shadow: 0 0 0 3px rgba(52,152,219,0.2);
+      background: white;
     }
 
     button {
-      padding: 10px 20px;
+      padding: 12px 24px;
       margin: 10px 0;
       font-size: 16px;
       cursor: pointer;
-      background-color: #3498db;
+      background: linear-gradient(135deg, var(--accent-color) 0%, #2980b9 100%);
       color: white;
       border: none;
-      border-radius: 6px;
-      transition: all 0.3s;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     button:hover {
-      background-color: #2980b9;
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(52,152,219,0.3);
+    }
+
+    button:active {
+      transform: translateY(0);
     }
 
     .start-button {
-      background-color: #2ecc71;
+      background: linear-gradient(135deg, var(--accent-color) 0%, #2980b9 100%);
       font-size: 18px;
-      padding: 12px 24px;
+      padding: 15px 30px;
       width: 100%;
       max-width: 500px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .start-button:hover {
-      background-color: #27ae60;
+    .start-button::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      transform: rotate(45deg);
+      animation: buttonShine 3s infinite;
+    }
+
+    @keyframes buttonShine {
+      0% { transform: translateX(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) rotate(45deg); }
     }
 
     #logOutput {
       height: 300px;
       overflow-y: scroll;
-      border: 1px solid #ddd;
-      padding: 15px;
+      border: 2px solid #e0e0e0;
+      padding: 20px;
       white-space: pre-wrap;
-      background-color: #f8f9fa;
+      background-color: #1e1e1e;
+      color: #00ff00;
       font-size: 14px;
       font-family: 'Consolas', 'Monaco', monospace;
-      border-radius: 6px;
+      border-radius: 8px;
+      box-shadow: inset 0 2px 10px rgba(0,0,0,0.1);
     }
 
     .checkbox-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 12px;
-      border: 1px solid #eee;
-      padding: 20px;
-      border-radius: 6px;
+      gap: 15px;
+      border: 2px solid #e0e0e0;
+      padding: 25px;
+      border-radius: 10px;
       background-color: #f8f9fa;
-      margin: 10px 0;
+      margin: 15px 0;
+      transition: all 0.3s ease;
+    }
+
+    .checkbox-grid:hover {
+      border-color: var(--accent-color);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
 
     .checkbox-grid label {
@@ -174,67 +275,485 @@
       cursor: pointer;
       font-size: 14px;
       margin: 0;
-      padding: 8px;
-      border-radius: 4px;
-      transition: background-color 0.2s;
+      padding: 10px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
 
     .checkbox-grid label:hover {
       background-color: #e9ecef;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     .checkbox-grid input[type="checkbox"] {
       margin-right: 10px;
-      width: auto;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
     }
 
     .checkbox-actions {
-      margin: 15px 0;
+      margin: 20px 0;
       display: flex;
-      gap: 10px;
+      gap: 15px;
     }
 
     .selection-count {
-      margin-left: 10px;
+      margin-left: 15px;
       color: #6c757d;
       font-size: 14px;
+      font-weight: 500;
     }
 
-    .gan-group {
-      margin-bottom: 25px;
-      padding: 20px;
-      border: 1px solid #eee;
-      border-radius: 8px;
-      background-color: #f8f9fa;
-    }
-    
-    .gan-group h3 {
-      margin: 0 0 15px 0;
-      color: #2c3e50;
-      font-size: 18px;
-    }
-
+    /* 添加响应式设计 */
     @media (max-width: 768px) {
       .container {
         padding: 10px;
       }
-
+      
       .header {
         flex-direction: column;
         text-align: center;
+        gap: 15px;
+      }
+      
+      .parameter-section {
         padding: 15px;
       }
-
-      .header-right {
-        margin-top: 10px;
-      }
-
-      .color-word {
-        font-size: 24px;
-      }
-
+      
       .checkbox-grid {
         grid-template-columns: 1fr;
+      }
+    }
+
+    /* 添加滚动条样式 */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent-color);
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2980b9;
+    }
+
+    .visualization-section {
+      margin: 20px 0;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      width: 100%;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .visualization-section h3 {
+      margin: 0 0 15px 0;
+      color: var(--text-color);
+      font-size: 18px;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 10px;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 15px;
+      align-items: stretch;
+    }
+
+    .image-container {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .image-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .image-container h4 {
+      margin: 0 0 10px 0;
+      color: var(--text-color);
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: contain;
+      border-radius: 4px;
+      transition: transform 0.3s ease;
+      flex: 1;
+    }
+
+    .image-container img:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin: 15px 0;
+      box-sizing: border-box;
+    }
+
+    .prediction-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      min-width: 600px;
+      table-layout: fixed;
+    }
+
+    .prediction-table th,
+    .prediction-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .prediction-table th {
+      background: var(--accent-color);
+      color: white;
+      font-weight: 500;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .prediction-table tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+
+    .prediction-table tr:hover {
+      background-color: #f1f3f5;
+    }
+
+    .prediction-table td {
+      color: var(--text-color);
+    }
+
+    .prediction-table .positive {
+      color: #2ecc71;
+    }
+
+    .prediction-table .negative {
+      color: #e74c3c;
+    }
+
+    #predictionResultsContent {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .custom-model-section {
+      margin-top: 30px;
+      padding: 25px;
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .custom-model-section h3 {
+      margin: 0 0 15px 0;
+      color: var(--text-color);
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .section-description {
+      color: #666;
+      margin-bottom: 25px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .model-upload-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+
+    .model-upload-item {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .model-upload-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .model-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .model-header h4 {
+      margin: 0;
+      font-size: 16px;
+      color: var(--text-color);
+      font-weight: 600;
+    }
+
+    .model-type-selector {
+      display: flex;
+      gap: 15px;
+    }
+
+    .radio-label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .radio-label:hover {
+      background: rgba(52,152,219,0.1);
+    }
+
+    .radio-text {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .file-upload-area {
+      position: relative;
+      margin-bottom: 15px;
+      border: 2px dashed #dee2e6;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .file-upload-area.has-file {
+      border-color: var(--accent-color);
+      background: rgba(52,152,219,0.05);
+    }
+
+    .file-info {
+      display: none;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #e8f4fd;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #2c3e50;
+    }
+
+    .file-info.show {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .file-name {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .file-icon {
+      font-size: 18px;
+    }
+
+    .remove-file {
+      cursor: pointer;
+      color: #e74c3c;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .remove-file:hover {
+      background: rgba(231, 76, 60, 0.1);
+    }
+
+    .model-file-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .upload-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .upload-icon {
+      font-size: 24px;
+      color: #666;
+    }
+
+    .model-description {
+      width: 100%;
+      box-sizing: border-box;
+      margin-top: 15px;
+    }
+
+    .model-description textarea {
+      width: 100%;
+      height: 120px;
+      padding: 12px;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      resize: vertical;
+      font-size: 14px;
+      line-height: 1.5;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+      background-color: #f8f9fa;
+    }
+
+    .model-description textarea:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px rgba(52,152,219,0.1);
+      outline: none;
+    }
+
+    .model-structure-info {
+      margin-top: 10px;
+      padding: 10px;
+      background: #e8f4fd;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #2c3e50;
+      display: none;
+    }
+
+    .model-structure-info.show {
+      display: block;
+    }
+
+    .structure-loading {
+      display: none;
+      text-align: center;
+      padding: 10px;
+      color: #666;
+    }
+
+    .structure-loading.show {
+      display: block;
+    }
+
+    .model-select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      background: #fff;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .model-select:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px rgba(52,152,219,0.1);
+      outline: none;
+    }
+
+    .model-upload-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 25px;
+    }
+
+    .upload-button, .reset-button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .upload-button {
+      background: linear-gradient(135deg, var(--accent-color) 0%, #2980b9 100%);
+      color: white;
+    }
+
+    .reset-button {
+      background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+      color: white;
+    }
+
+    .button-icon {
+      font-size: 18px;
+    }
+
+    .upload-button:hover, .reset-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    @media (max-width: 768px) {
+      .model-upload-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .model-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+      }
+      
+      .model-type-selector {
+        width: 100%;
+        justify-content: space-between;
       }
     }
   </style>
@@ -292,6 +811,124 @@
       
       <label for="window_sizes">窗口大小 (用逗号分隔):</label>
       <input type="text" id="window_sizes" value="{{ window_sizes|join(',') }}" placeholder="例如: 5,10,15">
+
+      <!-- 添加自定义模型上传区域 -->
+      <div class="custom-model-section">
+        <h3>模型配置</h3>
+        <p class="section-description">请为每个位置配置一个模型（自定义或系统预设）。系统需要3个模型进行对抗训练。</p>
+        
+        <div class="model-upload-grid">
+          <!-- 模型1上传区域 -->
+          <div class="model-upload-item">
+            <div class="model-header">
+              <h4>模型 1</h4>
+              <div class="model-type-selector">
+                <label class="radio-label">
+                  <input type="radio" name="model1Type" value="custom" checked onchange="toggleModelType(1)">
+                  <span class="radio-text">自定义模型</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="model1Type" value="preset" onchange="toggleModelType(1)">
+                  <span class="radio-text">系统预设</span>
+                </label>
+              </div>
+            </div>
+            <div class="custom-model-upload" id="model1Upload">
+              <div class="file-upload-area">
+                <input type="file" id="customModel1" accept=".py" class="model-file-input">
+                <div class="upload-placeholder">
+                  <i class="upload-icon">📁</i>
+                  <span>点击或拖拽上传模型文件</span>
+                </div>
+              </div>
+            </div>
+            <div class="preset-model-select" id="model1Preset" style="display: none;">
+              <select id="presetModel1" class="model-select">
+                <option value="gru">GRU</option>
+                <option value="lstm">LSTM</option>
+                <option value="transformer">Transformer</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 模型2上传区域 -->
+          <div class="model-upload-item">
+            <div class="model-header">
+              <h4>模型 2</h4>
+              <div class="model-type-selector">
+                <label class="radio-label">
+                  <input type="radio" name="model2Type" value="custom" checked onchange="toggleModelType(2)">
+                  <span class="radio-text">自定义模型</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="model2Type" value="preset" onchange="toggleModelType(2)">
+                  <span class="radio-text">系统预设</span>
+                </label>
+              </div>
+            </div>
+            <div class="custom-model-upload" id="model2Upload">
+              <div class="file-upload-area">
+                <input type="file" id="customModel2" accept=".py" class="model-file-input">
+                <div class="upload-placeholder">
+                  <i class="upload-icon">📁</i>
+                  <span>点击或拖拽上传模型文件</span>
+                </div>
+              </div>
+            </div>
+            <div class="preset-model-select" id="model2Preset" style="display: none;">
+              <select id="presetModel2" class="model-select">
+                <option value="gru">GRU</option>
+                <option value="lstm">LSTM</option>
+                <option value="transformer">Transformer</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 模型3上传区域 -->
+          <div class="model-upload-item">
+            <div class="model-header">
+              <h4>模型 3</h4>
+              <div class="model-type-selector">
+                <label class="radio-label">
+                  <input type="radio" name="model3Type" value="custom" checked onchange="toggleModelType(3)">
+                  <span class="radio-text">自定义模型</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="model3Type" value="preset" onchange="toggleModelType(3)">
+                  <span class="radio-text">系统预设</span>
+                </label>
+              </div>
+            </div>
+            <div class="custom-model-upload" id="model3Upload">
+              <div class="file-upload-area">
+                <input type="file" id="customModel3" accept=".py" class="model-file-input">
+                <div class="upload-placeholder">
+                  <i class="upload-icon">📁</i>
+                  <span>点击或拖拽上传模型文件</span>
+                </div>
+              </div>
+            </div>
+            <div class="preset-model-select" id="model3Preset" style="display: none;">
+              <select id="presetModel3" class="model-select">
+                <option value="gru">GRU</option>
+                <option value="lstm">LSTM</option>
+                <option value="transformer">Transformer</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="model-upload-actions">
+          <button onclick="uploadCustomModels()" class="upload-button">
+            <i class="button-icon">📤</i>
+            上传模型
+          </button>
+          <button onclick="resetCustomModels()" class="reset-button">
+            <i class="button-icon">🔄</i>
+            重置
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- 特征和目标列选择 -->
@@ -357,7 +994,54 @@
     <!-- 预测结果展示 -->
     <div class="parameter-section" id="predictionResults" style="display: none;">
       <h2>预测结果</h2>
-      <div id="predictionResultsContent"></div>
+      <div id="predictionResultsContent">
+        <!-- 预测结果表格 -->
+        <div class="visualization-section">
+          <h3>预测结果数据</h3>
+          <div class="table-container">
+            <table id="predictionTable" class="prediction-table">
+              <thead>
+                <tr>
+                  <th>加载中...</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 拟合曲线 -->
+        <div class="visualization-section">
+          <h3>拟合曲线</h3>
+          <div class="image-grid">
+            <div class="image-container">
+              <h4>G1训练集拟合</h4>
+              <img id="g1TrainFitting" src="" alt="G1训练集拟合曲线" style="display: none;">
+            </div>
+            <div class="image-container">
+              <h4>G1测试集拟合</h4>
+              <img id="g1TestFitting" src="" alt="G1测试集拟合曲线" style="display: none;">
+            </div>
+            <div class="image-container">
+              <h4>G2训练集拟合</h4>
+              <img id="g2TrainFitting" src="" alt="G2训练集拟合曲线" style="display: none;">
+            </div>
+            <div class="image-container">
+              <h4>G2测试集拟合</h4>
+              <img id="g2TestFitting" src="" alt="G2测试集拟合曲线" style="display: none;">
+            </div>
+            <div class="image-container">
+              <h4>G3训练集拟合</h4>
+              <img id="g3TrainFitting" src="" alt="G3训练集拟合曲线" style="display: none;">
+            </div>
+            <div class="image-container">
+              <h4>G3测试集拟合</h4>
+              <img id="g3TestFitting" src="" alt="G3测试集拟合曲线" style="display: none;">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- 日志输出 -->
@@ -554,17 +1238,52 @@
       const numEpochs = document.getElementById('num_epochs').value;
       const lr = document.getElementById('lr').value;
       const trainSplit = document.getElementById('train_split').value;
-      const windowSizes = document.getElementById('window_sizes').value;
+      const windowSizesInput = document.getElementById('window_sizes').value;
+      const windowSizes = windowSizesInput.split(',').map(size => parseInt(size.trim())).filter(size => !isNaN(size));
 
       // 检查必要参数
       if (!dataPath || !ckptDir || 
           featureColumns1.length === 0 || 
           featureColumns2.length === 0 || 
           featureColumns3.length === 0 || 
-          targetColumns.length === 0) {
+          targetColumns.length === 0 ||
+          windowSizes.length === 0) {
         alert('请填写所有必要参数并为每个GAN选择特征列！');
         return;
       }
+
+      // 获取模型配置
+      const modelConfig = {
+        models: []
+      };
+
+      // 检查每个模型位置
+      for (let i = 1; i <= 3; i++) {
+        const modelType = document.querySelector(`input[name="model${i}Type"]:checked`).value;
+        const modelInfo = {
+          type: modelType,
+          index: i
+        };
+
+        if (modelType === 'custom') {
+          const modelFile = document.getElementById(`customModel${i}`).files[0];
+          
+          if (!modelFile) {
+            alert(`请为模型 ${i} 上传文件！`);
+            return;
+          }
+          
+          modelInfo.file = modelFile;
+        } else {
+          const presetModel = document.getElementById(`presetModel${i}`).value;
+          modelInfo.preset = presetModel;
+        }
+        
+        modelConfig.models.push(modelInfo);
+      }
+
+      // 打印模型配置用于调试
+      console.log('模型配置:', modelConfig);
 
       // 禁用开始按钮
       const startButton = document.querySelector('.start-button');
@@ -585,26 +1304,38 @@
         console.log('GAN 3 特征列:', featureColumns3);
         console.log('目标列:', targetColumns);
 
+        // 创建FormData对象用于发送文件
+        const formData = new FormData();
+        formData.append('train_csv', dataPath);
+        formData.append('save_path', ckptDir + '/model.pt');
+        formData.append('feature_columns', JSON.stringify([
+          featureColumns1,
+          featureColumns2,
+          featureColumns3
+        ]));
+        formData.append('target_column', JSON.stringify(targetColumns));
+        formData.append('batch_size', batchSize);
+        formData.append('num_epochs', numEpochs);
+        formData.append('lr', lr);
+        formData.append('train_split', trainSplit);
+        formData.append('window_sizes', JSON.stringify(windowSizes));
+        formData.append('model_config', JSON.stringify(modelConfig));
+
+        // 添加模型文件
+        modelConfig.models.forEach((model, index) => {
+          if (model.type === 'custom' && model.file) {
+            formData.append(`model${index + 1}`, model.file);
+          }
+        });
+
+        // 打印FormData内容用于调试
+        for (let pair of formData.entries()) {
+          console.log(pair[0] + ': ' + pair[1]);
+        }
+
         const response = await fetch('/train', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            train_csv: dataPath,
-            save_path: ckptDir + '/model.pt',
-            feature_columns: [
-              featureColumns1,
-              featureColumns2,
-              featureColumns3
-            ],
-            target_column: targetColumns,
-            batch_size: parseInt(batchSize),
-            num_epochs: parseInt(numEpochs),
-            lr: parseFloat(lr),
-            train_split: parseFloat(trainSplit),
-            window_sizes: windowSizes.split(',').map(x => parseInt(x.trim()))
-          })
+          body: formData
         });
 
         if (!response.ok) {
@@ -663,9 +1394,6 @@
 
         const response = await fetch('/predict', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
           body: JSON.stringify({
             input_path: inputPath,
             output_path: outputPath,
@@ -688,6 +1416,96 @@
         // 显示预测结果区域
         const predictionResults = document.getElementById('predictionResults');
         predictionResults.style.display = 'block';
+
+        // 加载预测结果CSV文件
+        async function loadPredictionResults(outputPath) {
+          try {
+            const response = await fetch(`/get_prediction_csv?path=${encodeURIComponent(outputPath)}`);
+            if (response.ok) {
+              const data = await response.json();
+              if (data.error) {
+                throw new Error(data.error);
+              }
+              
+              // 更新表格
+              const table = document.getElementById('predictionTable');
+              const thead = table.querySelector('thead');
+              const tbody = table.querySelector('tbody');
+              
+              // 清空现有内容
+              thead.innerHTML = '';
+              tbody.innerHTML = '';
+              
+              // 添加表头
+              const headerRow = document.createElement('tr');
+              data.columns.forEach(column => {
+                const th = document.createElement('th');
+                th.textContent = column;
+                headerRow.appendChild(th);
+              });
+              thead.appendChild(headerRow);
+              
+              // 添加数据行
+              data.rows.forEach(row => {
+                const tr = document.createElement('tr');
+                row.forEach((cell, index) => {
+                  const td = document.createElement('td');
+                  // 如果是数值，添加颜色标识
+                  if (typeof cell === 'number') {
+                    td.textContent = cell.toFixed(4);
+                    if (cell > 0) {
+                      td.classList.add('positive');
+                    } else if (cell < 0) {
+                      td.classList.add('negative');
+                    }
+                  } else {
+                    td.textContent = cell;
+                  }
+                  tr.appendChild(td);
+                });
+                tbody.appendChild(tr);
+              });
+            }
+          } catch (error) {
+            console.error('加载预测结果失败:', error);
+            const table = document.getElementById('predictionTable');
+            table.innerHTML = `<tr><td>加载预测结果失败: ${error.message}</td></tr>`;
+          }
+        }
+
+        // 定期检查并更新图片和表格
+        const outputDir = outputPath.substring(0, outputPath.lastIndexOf('/'));
+        const checkInterval = setInterval(async () => {
+          try {
+            // 加载预测结果表格
+            await loadPredictionResults(outputPath);
+
+            const imageResponse = await fetch(`/get_prediction_images?output_dir=${encodeURIComponent(outputDir)}`);
+            if (imageResponse.ok) {
+              const images = await imageResponse.json();
+              
+              // 更新拟合曲线图片
+              if (images.fitting_curves) {
+                const fittingCurves = images.fitting_curves;
+                for (let i = 0; i < fittingCurves.length; i++) {
+                  const imgId = i < 3 ? `g${i+1}TrainFitting` : `g${i-2}TestFitting`;
+                  const img = document.getElementById(imgId);
+                  if (img) {
+                    img.src = `/get_image/${encodeURIComponent(fittingCurves[i])}`;
+                    img.style.display = 'block';
+                  }
+                }
+              }
+
+              // 如果所有图片都已加载，停止检查
+              if (Object.keys(images).length > 0) {
+                clearInterval(checkInterval);
+              }
+            }
+          } catch (error) {
+            console.error('获取图片失败:', error);
+          }
+        }, 2000); // 每2秒检查一次
 
       } catch (error) {
         console.error('预测错误:', error);
@@ -733,6 +1551,292 @@
         eventSource.close();
       };
     }
+
+    // 添加模型类型切换功能
+    function toggleModelType(modelNum) {
+        const customUpload = document.getElementById(`model${modelNum}Upload`);
+        const presetSelect = document.getElementById(`model${modelNum}Preset`);
+        const modelType = document.querySelector(`input[name="model${modelNum}Type"]:checked`).value;
+        
+        if (modelType === 'custom') {
+            customUpload.style.display = 'block';
+            presetSelect.style.display = 'none';
+        } else {
+            customUpload.style.display = 'none';
+            presetSelect.style.display = 'block';
+        }
+    }
+
+    async function uploadCustomModels() {
+      const formData = new FormData();
+      let hasModel = false;
+      
+      // 处理每个模型
+      for (let i = 1; i <= 3; i++) {
+        const modelType = document.querySelector(`input[name="model${i}Type"]:checked`).value;
+        
+        if (modelType === 'custom') {
+          const modelFile = document.getElementById(`customModel${i}`).files[0];
+          
+          if (modelFile) {
+            hasModel = true;
+            formData.append(`model${i}`, modelFile);
+          }
+        } else {
+          const presetModel = document.getElementById(`presetModel${i}`).value;
+          hasModel = true;
+          formData.append(`presetModel${i}`, presetModel);
+        }
+      }
+      
+      if (!hasModel) {
+        alert('请至少配置一个模型（自定义或预设）');
+        return;
+      }
+
+      try {
+        const response = await fetch('/upload_models', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || '模型上传失败');
+        }
+
+        const data = await response.json();
+        if (data.error) {
+          throw new Error(data.error);
+        }
+
+        alert('模型配置成功！');
+        // 更新日志
+        const logOutput = document.getElementById('logOutput');
+        logOutput.textContent += `模型配置成功: ${data.message}\n`;
+        
+        // 保存模型配置供训练使用
+        window.modelConfig = data.model_config;
+
+      } catch (error) {
+        console.error('模型配置错误:', error);
+        alert('模型配置失败: ' + error.message);
+        const logOutput = document.getElementById('logOutput');
+        logOutput.textContent += `错误: ${error.message}\n`;
+      }
+    }
+
+    function resetCustomModels() {
+      // 重置所有模型上传区域
+      for (let i = 1; i <= 3; i++) {
+        // 重置文件输入
+        const fileInput = document.getElementById(`customModel${i}`);
+        if (fileInput) {
+          fileInput.value = '';
+        }
+        
+        // 重置预设模型选择
+        const presetSelect = document.getElementById(`presetModel${i}`);
+        if (presetSelect) {
+          presetSelect.value = 'gru';
+        }
+        
+        // 重置单选按钮
+        const customRadio = document.querySelector(`input[name="model${i}Type"][value="custom"]`);
+        if (customRadio) {
+          customRadio.checked = true;
+        }
+        
+        // 重置显示状态
+        const customUpload = document.getElementById(`model${i}Upload`);
+        const presetSelectDiv = document.getElementById(`model${i}Preset`);
+        if (customUpload) {
+          customUpload.style.display = 'block';
+        }
+        if (presetSelectDiv) {
+          presetSelectDiv.style.display = 'none';
+        }
+        
+        // 重置文件信息显示
+        const uploadArea = document.querySelector(`#model${i}Upload .file-upload-area`);
+        if (uploadArea) {
+          const fileInfo = uploadArea.querySelector('.file-info');
+          const placeholder = uploadArea.querySelector('.upload-placeholder');
+          const structureInfo = uploadArea.querySelector('.model-structure-info');
+          
+          if (fileInfo) {
+            fileInfo.classList.remove('show');
+          }
+          if (placeholder) {
+            placeholder.style.display = 'flex';
+          }
+          if (structureInfo) {
+            structureInfo.classList.remove('show');
+            structureInfo.innerHTML = '';
+          }
+          uploadArea.classList.remove('has-file');
+        }
+      }
+      
+      // 清除保存的模型配置
+      window.modelConfig = null;
+      
+      // 更新日志
+      const logOutput = document.getElementById('logOutput');
+      logOutput.textContent += '模型配置已重置\n';
+    }
+
+    // 修改文件上传处理函数
+    async function handleFileUpload(input, modelNum) {
+        const file = input.files[0];
+        if (!file) {
+            console.log('没有选择文件');
+            return;
+        }
+
+        console.log(`开始处理模型 ${modelNum} 的文件上传:`, file.name);
+
+        const uploadArea = input.closest('.file-upload-area');
+        const placeholder = uploadArea.querySelector('.upload-placeholder');
+        const fileInfo = uploadArea.querySelector('.file-info') || createFileInfoElement(uploadArea);
+        const structureInfo = uploadArea.querySelector('.model-structure-info') || createStructureInfoElement(uploadArea);
+        const loadingIndicator = uploadArea.querySelector('.structure-loading') || createLoadingIndicator(uploadArea);
+        
+        try {
+            // 更新文件信息显示
+            fileInfo.querySelector('.file-name span').textContent = file.name;
+            fileInfo.classList.add('show');
+            placeholder.style.display = 'none';
+            uploadArea.classList.add('has-file');
+            
+            // 显示加载指示器
+            loadingIndicator.classList.add('show');
+            structureInfo.classList.remove('show');
+            
+            // 创建FormData对象
+            const formData = new FormData();
+            formData.append('model_file', file);
+            
+            console.log('发送文件到服务器进行分析...');
+            
+            // 发送文件到服务器进行结构分析
+            const response = await fetch('/analyze_model', {
+                method: 'POST',
+                body: formData
+            });
+            
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || '模型结构分析失败');
+            }
+            
+            const data = await response.json();
+            console.log('收到服务器响应:', data);
+            
+            // 显示模型结构信息
+            structureInfo.innerHTML = `
+                <strong>模型结构分析结果：</strong><br>
+                <pre>${data.structure}</pre>
+            `;
+            structureInfo.classList.add('show');
+            
+            // 更新日志
+            const logOutput = document.getElementById('logOutput');
+            logOutput.textContent += `模型 ${modelNum} 结构分析完成\n`;
+            
+        } catch (error) {
+            console.error('模型分析错误:', error);
+            structureInfo.innerHTML = `<span style="color: #e74c3c;">模型结构分析失败: ${error.message}</span>`;
+            structureInfo.classList.add('show');
+            
+            // 更新日志
+            const logOutput = document.getElementById('logOutput');
+            logOutput.textContent += `模型 ${modelNum} 分析失败: ${error.message}\n`;
+        } finally {
+            loadingIndicator.classList.remove('show');
+        }
+    }
+
+    // 创建文件信息显示元素
+    function createFileInfoElement(uploadArea) {
+        const fileInfo = document.createElement('div');
+        fileInfo.className = 'file-info';
+        fileInfo.innerHTML = `
+            <div class="file-name">
+                <i class="file-icon">📄</i>
+                <span></span>
+            </div>
+            <div class="remove-file" onclick="removeFile(this, ${uploadArea.dataset.modelNum})">
+                <i class="remove-icon">✕</i>
+            </div>
+        `;
+        uploadArea.appendChild(fileInfo);
+        return fileInfo;
+    }
+
+    // 创建模型结构信息显示元素
+    function createStructureInfoElement(uploadArea) {
+        const structureInfo = document.createElement('div');
+        structureInfo.className = 'model-structure-info';
+        uploadArea.appendChild(structureInfo);
+        return structureInfo;
+    }
+
+    // 创建加载指示器
+    function createLoadingIndicator(uploadArea) {
+        const loading = document.createElement('div');
+        loading.className = 'structure-loading';
+        loading.innerHTML = '<i class="loading-icon">⏳</i> 正在分析模型结构...';
+        uploadArea.appendChild(loading);
+        return loading;
+    }
+
+    // 修改移除文件函数
+    function removeFile(button, modelNum) {
+        const fileInfo = button.closest('.file-info');
+        const uploadArea = fileInfo.closest('.file-upload-area');
+        const input = uploadArea.querySelector('input[type="file"]');
+        const placeholder = uploadArea.querySelector('.upload-placeholder');
+        const structureInfo = uploadArea.querySelector('.model-structure-info');
+        const loadingIndicator = uploadArea.querySelector('.structure-loading');
+        
+        // 清除文件
+        input.value = '';
+        fileInfo.classList.remove('show');
+        placeholder.style.display = 'flex';
+        uploadArea.classList.remove('has-file');
+        
+        // 清除结构信息
+        if (structureInfo) {
+            structureInfo.classList.remove('show');
+            structureInfo.innerHTML = '';
+        }
+        
+        // 隐藏加载指示器
+        if (loadingIndicator) {
+            loadingIndicator.classList.remove('show');
+        }
+        
+        // 更新日志
+        const logOutput = document.getElementById('logOutput');
+        logOutput.textContent += `模型 ${modelNum} 文件已移除\n`;
+    }
+
+    // 为每个文件输入添加事件监听器
+    document.querySelectorAll('.model-file-input').forEach((input, index) => {
+        const modelNum = index + 1;
+        input.closest('.file-upload-area').dataset.modelNum = modelNum;
+        input.addEventListener('change', () => handleFileUpload(input, modelNum));
+    });
+
+    // 在页面加载完成后绑定事件
+    document.addEventListener('DOMContentLoaded', function() {
+      // 绑定开始训练按钮的点击事件
+      const startTrainingButton = document.getElementById('startTrainingButton');
+      if (startTrainingButton) {
+        startTrainingButton.addEventListener('click', startTraining);
+      }
+    });
   </script>
 </body>
 </html>

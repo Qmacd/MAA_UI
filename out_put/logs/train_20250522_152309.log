@@ -1,0 +1,152 @@
+2025-05-22 15:23:09,189  INFO  ARGS = {
+  "data_path": "database/zx_processed_黄金_day.csv",
+  "output_dir": "out_put",
+  "ckpt_dir": "out_put/ckpt",
+  "ckpt_path": "20250520_162930",
+  "N_pairs": 3,
+  "batch_size": 64,
+  "window_sizes": [
+    5,
+    10,
+    15
+  ],
+  "num_classes": 3,
+  "feature_groups": [
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      1
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      1
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      1
+    ]
+  ],
+  "target_columns": [
+    [
+      1
+    ]
+  ],
+  "device": [
+    "cpu"
+  ],
+  "random_seed": 3407,
+  "log_diff": false,
+  "start_timestamp": 31,
+  "end_timestamp": -1,
+  "generators": [
+    "transformer",
+    "transformer",
+    "transformer"
+  ],
+  "discriminators": null,
+  "distill_epochs": 1,
+  "cross_finetune_epochs": 5,
+  "lr": 2e-05,
+  "train_split": 0.7,
+  "num_epochs": 1
+}
+2025-05-22 15:23:09,192  INFO  开始预测过程
+2025-05-22 15:23:09,193  INFO  使用参数: {'data_path': 'database/zx_processed_黄金_day.csv', 'output_dir': 'out_put', 'ckpt_dir': 'out_put/ckpt', 'ckpt_path': '20250520_162930', 'N_pairs': 3, 'batch_size': 64, 'window_sizes': [5, 10, 15], 'num_classes': 3, 'feature_groups': [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 1], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 1], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 1]], 'target_columns': [[1]], 'device': ['cpu'], 'random_seed': 3407, 'log_diff': False, 'start_timestamp': 31, 'end_timestamp': -1, 'generators': ['transformer', 'transformer', 'transformer'], 'discriminators': None, 'distill_epochs': 1, 'cross_finetune_epochs': 5, 'lr': 2e-05, 'train_split': 0.7, 'num_epochs': 1}
+2025-05-22 15:23:09,194  INFO  初始化MAA模型...
+2025-05-22 15:23:09,205  INFO  处理输入数据...
+2025-05-22 15:23:09,205  INFO  127.0.0.1 - - [22/May/2025 15:23:09] "GET /stream HTTP/1.1" 200 -
+2025-05-22 15:23:09,270  INFO  初始化数据加载器...
+2025-05-22 15:23:09,526  INFO  初始化模型...
+2025-05-22 15:23:09,624  INFO  从 20250520_162930 加载模型权重...
+2025-05-22 15:23:09,625  INFO  开始预测...
+2025-05-22 15:23:12,269  INFO  Train Metrics for G1: MSE=25.3776, MAE=3.7555, RMSE=5.0376, MAPE=1.2295
+2025-05-22 15:23:14,926  INFO  Train Metrics for G2: MSE=19.5397, MAE=3.1038, RMSE=4.4204, MAPE=1.0054
+2025-05-22 15:23:17,928  INFO  Train Metrics for G3: MSE=10.2006, MAE=2.2166, RMSE=3.1938, MAPE=0.7473
+2025-05-22 15:23:20,317  INFO  Test Metrics for G1: MSE=798.2901, MAE=17.6919, RMSE=28.2540, MAPE=3.4425
+2025-05-22 15:23:23,012  INFO  Test Metrics for G2: MSE=817.9484, MAE=17.4405, RMSE=28.5998, MAPE=3.3778
+2025-05-22 15:23:25,507  INFO  Test Metrics for G3: MSE=692.6315, MAE=14.6261, RMSE=26.3179, MAPE=2.6992
+2025-05-22 15:23:26,330  INFO  预测结果已保存到: out_put\prediction_results.csv
+2025-05-22 15:24:11,934  INFO   * Detected change in 'D:\\users\\pythonProject\\ai量化\\MAA_UI\\app.py', reloading

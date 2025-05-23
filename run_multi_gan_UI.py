@@ -7,6 +7,7 @@ from utils.logger import setup_experiment_logging
 import logging
 import sys
 
+
 def parse_feature_ranges(feature_str):
     """将'6-10,15-17'这样的字符串转换为[6,7,8,9,10,15,16,17]这样的列表"""
     try:
@@ -69,7 +70,7 @@ def run_experiments(args):
 
             if args.mode == "train":
                 results = gca.train(logger)
-                gca.pred()
+                # gca.pred()
             elif args.mode == "pred":
                 results = gca.pred()
 

@@ -18,7 +18,7 @@ scaler = GradScaler()
 
 def train_multi_gan(args, generators, discriminators, dataloaders,
                     window_sizes,
-                    y_scaler, train_xes, train_y, val_xes, val_y,train_labels, val_labels,
+                    y_scaler, train_xes, train_y, val_xes, val_y, train_labels, val_labels,
                     distill_epochs, cross_finetune_epochs,
                     num_epochs,
                     output_dir,
@@ -161,6 +161,8 @@ def train_multi_gan(args, generators, discriminators, dataloaders,
             X.append(x_last.to(device))
             Y.append(y_last.to(device))
             LABELS.append(label_last.to(device).long())
+
+            # print(X[0].shape, Y[0].shape, LABELS[0].shape)
 
             for i in range(N):
                 generators[i].eval()
@@ -410,8 +412,9 @@ def train_multi_gan(args, generators, discriminators, dataloaders,
         val_labels[i] = val_labels[i][:, -1].squeeze()
 
 
-    #results = evaluate_best_models(generators, best_model_state, train_xes, train_y, val_xes, val_y, y_scaler,output_dir)
-    results=evaluate_best_models_reg_cls(generators, best_model_state, train_xes, train_y, train_labels,val_xes, val_y,val_labels, y_scaler, output_dir)
+    # results = validate_financial_metric(generator, train_xes, train_y, val_xes, val_y, y_scaler)
+    results = evaluate_best_models(generators, best_model_state, train_xes, train_y, val_xes, val_y, y_scaler,output_dir)
+    # results=evaluate_best_models_reg_cls(generators, best_model_state, train_xes, train_y, train_labels,val_xes, val_y,val_labels, y_scaler, output_dir)
 
     return results, best_model_state
 
@@ -433,6 +436,12 @@ def discriminate_fake(args, X, Y, LABELS,
         outputs = [generator(x) for (generator, x) in zip(generators, X)]  # cannot be omitted
         real_labels = [torch.ones_like(dis_real_output).to(device) for dis_real_output in dis_real_outputs]
         fake_data_G, fake_logits_G = zip(*outputs)
+
+        # print("Debug shapes of fake_data_G and fake_logits_G:")
+        # for fake_data, fake_logits in zip(fake_data_G, fake_logits_G):
+        #     print(f"fake_data shape: {fake_data.shape}")
+        #     print(f"fake_logits shape: {fake_logits.shape}")
+
         # 假设 fake_logits_G 是一个 list，每个元素是 [batch_size, num_classes] 的 tensor
         fake_cls_G = [torch.argmax(logit, dim=1) for logit in fake_logits_G]  # shape: [batch_size]
 
@@ -447,6 +456,15 @@ def discriminate_fake(args, X, Y, LABELS,
                             for (label, window_size, fake_data) in zip(Y, window_sizes, fake_data_temp_G)]
         # G1生成的cls logits
         fake_cls_temp_G = [fake_logits.detach() for fake_logits in fake_cls_G]
+
+        # Add debug prints
+        # print("Debug shapes before concatenation:")
+        # for label, window_size, fake_cls in zip(Y, window_sizes, fake_cls_temp_G):
+        #     print(f"label shape: {label[:, :window_size, :].shape}")
+        #     print(f"fake_cls shape after reshape: {fake_cls.reshape(-1, 1, target_num).shape}")
+        #     print(f"window_size: {window_size}")
+        #     print("---")
+
         # 拼接之后可以让生成的假数据，既包含假数据又包含真数据，
         fake_cls_temp_G = [torch.cat([label[:, :window_size, :], fake_cls.reshape(-1, 1, target_num)], axis=1)
                            for (label, window_size, fake_cls) in zip(Y, window_sizes, fake_cls_temp_G)]
@@ -456,8 +474,6 @@ def discriminate_fake(args, X, Y, LABELS,
                             for (y, window_size, fake_data) in zip(Y, window_sizes, fake_data_G)]
         fake_cls_temp_G = [torch.cat([label[:, :window_size, :], fake_cls.reshape(-1, 1, target_num)], axis=1)
                            for (label, window_size, fake_cls) in zip(LABELS, window_sizes, fake_cls_G)]
-
-
 
     # 判别器对伪造数据损失
     # 三个生成器的结果的数据对齐

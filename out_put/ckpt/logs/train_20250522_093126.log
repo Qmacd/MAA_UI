@@ -1,0 +1,145 @@
+2025-05-22 09:31:26,281  INFO  ARGS = {
+  "notes": "",
+  "data_path": "database/zx_processed_黄金_day.csv",
+  "output_dir": "out_put/ckpt",
+  "ckpt_dir": "ckpt",
+  "feature_groups": [
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ]
+  ],
+  "target_columns": [
+    [
+      1
+    ]
+  ],
+  "start_timestamp": 31,
+  "end_timestamp": -1,
+  "window_sizes": [
+    5,
+    10,
+    15
+  ],
+  "N_pairs": 3,
+  "num_classes": 3,
+  "generators": [
+    "transformer",
+    "transformer",
+    "transformer"
+  ],
+  "discriminators": null,
+  "distill_epochs": 1,
+  "cross_finetune_epochs": 5,
+  "device": [
+    0
+  ],
+  "num_epochs": 2,
+  "lr": 2e-05,
+  "batch_size": 64,
+  "train_split": 0.7,
+  "random_seed": 3407,
+  "amp_dtype": "none",
+  "mode": "train",
+  "ckpt_path": "latest",
+  "log_diff": false
+}
+2025-05-22 09:31:34,949  INFO  EPOCH 1 | Validation MSE: G1: 0.15219539, G2: 0.08124134, G3: 0.03097324 | Accuracy: G1: 45.72 %, G2: 45.72 %, G3: 45.72 %
+2025-05-22 09:31:39,723  INFO  EPOCH 2 | Validation MSE: G1: 0.03916431, G2: 0.04864781, G3: 0.02341609 | Accuracy: G1: 47.02 %, G2: 53.30 %, G3: 47.13 %
+2025-05-22 09:31:43,795  INFO  Best epochs | G1:2, G2:2, G3:2
+2025-05-22 09:31:44,902  INFO  Train Metrics for G1: MSE=405.3969, MAE=15.9875, RMSE=20.1345, MAPE=5.5704
+2025-05-22 09:31:45,835  INFO  Train Metrics for G2: MSE=97.6492, MAE=7.8007, RMSE=9.8818, MAPE=2.6814
+2025-05-22 09:31:46,791  INFO  Train Metrics for G3: MSE=99.7327, MAE=8.0935, RMSE=9.9866, MAPE=2.7806
+2025-05-22 09:31:47,691  INFO  Test Metrics for G1: MSE=2111.7975, MAE=31.4750, RMSE=45.9543, MAPE=6.2406
+2025-05-22 09:31:48,688  INFO  Test Metrics for G2: MSE=2623.1622, MAE=32.4032, RMSE=51.2168, MAPE=6.2205
+2025-05-22 09:31:49,694  INFO  Test Metrics for G3: MSE=1262.6299, MAE=22.1320, RMSE=35.5335, MAPE=4.2697
+2025-05-22 09:31:49,770  ERROR  运行实验时出错: 'train_acc'

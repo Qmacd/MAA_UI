@@ -84,7 +84,6 @@ def run_prediction(args):
         
         # 加载模型权重
         logger.info(f"从 {args.ckpt_path} 加载模型权重...")
-        gca.load_model()
         
         # 进行预测
         logger.info("开始预测...")

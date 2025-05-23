@@ -1,0 +1,903 @@
+2025-05-20 15:33:09,281  INFO  ARGS = {
+  "notes": "",
+  "data_path": "database/zx_processed_黄金_day.csv",
+  "output_dir": "out_put/ckpt",
+  "ckpt_dir": "ckpt",
+  "feature_groups": [
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ]
+  ],
+  "target_columns": [
+    [
+      1
+    ]
+  ],
+  "start_timestamp": 31,
+  "end_timestamp": -1,
+  "window_sizes": [
+    5,
+    10,
+    15
+  ],
+  "N_pairs": 3,
+  "num_classes": 3,
+  "generators": [
+    "transformer",
+    "transformer",
+    "transformer"
+  ],
+  "discriminators": null,
+  "distill_epochs": 1,
+  "cross_finetune_epochs": 5,
+  "device": [
+    0
+  ],
+  "num_epochs": 1024,
+  "lr": 2e-05,
+  "batch_size": 64,
+  "train_split": 0.7,
+  "random_seed": 3407,
+  "amp_dtype": "none",
+  "mode": "train",
+  "ckpt_path": "latest",
+  "log_diff": false
+}
+2025-05-20 15:33:20,611  ERROR  运行实验时出错: DataLoader worker (pid(s) 16116, 23900) exited unexpectedly
+2025-05-20 15:35:30,187  INFO  127.0.0.1 - - [20/May/2025 15:35:30] "POST /train HTTP/1.1" 200 -
+2025-05-20 15:35:30,187  INFO  127.0.0.1 - - [20/May/2025 15:35:30] "GET /stream HTTP/1.1" 200 -
+2025-05-20 15:35:30,369  INFO  ARGS = {
+  "notes": "",
+  "data_path": "database/zx_processed_黄金_day.csv",
+  "output_dir": "out_put/ckpt",
+  "ckpt_dir": "ckpt",
+  "feature_groups": [
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ]
+  ],
+  "target_columns": [
+    [
+      1
+    ]
+  ],
+  "start_timestamp": 31,
+  "end_timestamp": -1,
+  "window_sizes": [
+    5,
+    10,
+    15
+  ],
+  "N_pairs": 3,
+  "num_classes": 3,
+  "generators": [
+    "transformer",
+    "transformer",
+    "transformer"
+  ],
+  "discriminators": null,
+  "distill_epochs": 1,
+  "cross_finetune_epochs": 5,
+  "device": [
+    0
+  ],
+  "num_epochs": 1024,
+  "lr": 2e-05,
+  "batch_size": 64,
+  "train_split": 0.7,
+  "random_seed": 3407,
+  "amp_dtype": "none",
+  "mode": "train",
+  "ckpt_path": "latest",
+  "log_diff": false
+}
+2025-05-20 15:35:35,396  ERROR  运行实验时出错: DataLoader worker (pid(s) 17044, 16688) exited unexpectedly
+2025-05-20 15:35:51,858  INFO  127.0.0.1 - - [20/May/2025 15:35:51] "GET / HTTP/1.1" 200 -
+2025-05-20 15:35:51,862  INFO  127.0.0.1 - - [20/May/2025 15:35:51] "GET / HTTP/1.1" 200 -
+2025-05-20 15:35:56,787  INFO  127.0.0.1 - - [20/May/2025 15:35:56] "GET / HTTP/1.1" 200 -
+2025-05-20 15:35:58,060  INFO  127.0.0.1 - - [20/May/2025 15:35:58] "GET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1" 200 -
+2025-05-20 15:36:07,063  INFO  127.0.0.1 - - [20/May/2025 15:36:07] "POST /train HTTP/1.1" 200 -
+2025-05-20 15:36:07,063  INFO  127.0.0.1 - - [20/May/2025 15:36:07] "GET /stream HTTP/1.1" 200 -
+2025-05-20 15:36:07,245  INFO  ARGS = {
+  "notes": "",
+  "data_path": "database/zx_processed_黄金_day.csv",
+  "output_dir": "out_put/ckpt",
+  "ckpt_dir": "ckpt",
+  "feature_groups": [
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ]
+  ],
+  "target_columns": [
+    [
+      1
+    ]
+  ],
+  "start_timestamp": 31,
+  "end_timestamp": -1,
+  "window_sizes": [
+    5,
+    10,
+    15
+  ],
+  "N_pairs": 3,
+  "num_classes": 3,
+  "generators": [
+    "transformer",
+    "transformer",
+    "transformer"
+  ],
+  "discriminators": null,
+  "distill_epochs": 1,
+  "cross_finetune_epochs": 5,
+  "device": [
+    0
+  ],
+  "num_epochs": 1024,
+  "lr": 2e-05,
+  "batch_size": 64,
+  "train_split": 0.7,
+  "random_seed": 3407,
+  "amp_dtype": "none",
+  "mode": "train",
+  "ckpt_path": "latest",
+  "log_diff": false
+}
+2025-05-20 15:37:57,437  ERROR  运行实验时出错: DataLoader worker (pid(s) 13568, 17684) exited unexpectedly
+2025-05-20 15:44:14,163  INFO  127.0.0.1 - - [20/May/2025 15:44:14] "GET / HTTP/1.1" 200 -
+2025-05-20 15:44:14,525  INFO  127.0.0.1 - - [20/May/2025 15:44:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-20 15:44:16,865  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    print(f"加载的列名: {columns_with_index}")  # 添加日志
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    print(f"加载列名错误: {str(e)}")  # 添加错误日志
+OSError: [Errno 22] Invalid argument
+2025-05-20 15:44:16,867  INFO  127.0.0.1 - - [20/May/2025 15:44:16] "[35m[1mGET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 15:44:23,216  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    print(f"加载的列名: {columns_with_index}")  # 添加日志
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    print(f"加载列名错误: {str(e)}")  # 添加错误日志
+OSError: [Errno 22] Invalid argument
+2025-05-20 15:44:23,217  INFO  127.0.0.1 - - [20/May/2025 15:44:23] "[35m[1mGET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 15:45:37,541  INFO  127.0.0.1 - - [20/May/2025 15:45:37] "GET / HTTP/1.1" 200 -
+2025-05-20 15:45:38,115  INFO  127.0.0.1 - - [20/May/2025 15:45:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-20 15:45:38,925  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    print(f"加载的列名: {columns_with_index}")  # 添加日志
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    print(f"加载列名错误: {str(e)}")  # 添加错误日志
+OSError: [Errno 22] Invalid argument
+2025-05-20 15:45:38,926  INFO  127.0.0.1 - - [20/May/2025 15:45:38] "[35m[1mGET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 15:45:42,291  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    print(f"加载的列名: {columns_with_index}")  # 添加日志
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    print(f"加载列名错误: {str(e)}")  # 添加错误日志
+OSError: [Errno 22] Invalid argument
+2025-05-20 15:45:42,292  INFO  127.0.0.1 - - [20/May/2025 15:45:42] "[35m[1mGET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 15:45:45,847  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    print(f"加载的列名: {columns_with_index}")  # 添加日志
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    print(f"加载列名错误: {str(e)}")  # 添加错误日志
+OSError: [Errno 22] Invalid argument
+2025-05-20 15:45:45,848  INFO  127.0.0.1 - - [20/May/2025 15:45:45] "[35m[1mGET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 15:45:51,728  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    print(f"加载的列名: {columns_with_index}")  # 添加日志
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    print(f"加载列名错误: {str(e)}")  # 添加错误日志
+OSError: [Errno 22] Invalid argument
+2025-05-20 15:45:51,729  INFO  127.0.0.1 - - [20/May/2025 15:45:51] "[35m[1mGET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 15:45:59,007  INFO  127.0.0.1 - - [20/May/2025 15:45:59] "GET / HTTP/1.1" 200 -
+2025-05-20 15:46:01,043  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    print(f"加载的列名: {columns_with_index}")  # 添加日志
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    print(f"加载列名错误: {str(e)}")  # 添加错误日志
+OSError: [Errno 22] Invalid argument
+2025-05-20 15:46:01,044  INFO  127.0.0.1 - - [20/May/2025 15:46:01] "[35m[1mGET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 15:46:33,845  INFO  127.0.0.1 - - [20/May/2025 15:46:33] "GET / HTTP/1.1" 200 -
+2025-05-20 15:46:34,431  INFO  127.0.0.1 - - [20/May/2025 15:46:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-20 15:46:35,316  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    print(f"加载的列名: {columns_with_index}")  # 添加日志
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    print(f"加载列名错误: {str(e)}")  # 添加错误日志
+OSError: [Errno 22] Invalid argument
+2025-05-20 15:46:35,318  INFO  127.0.0.1 - - [20/May/2025 15:46:35] "[35m[1mGET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 15:46:49,281  INFO  127.0.0.1 - - [20/May/2025 15:46:49] "GET / HTTP/1.1" 200 -
+2025-05-20 15:46:49,829  INFO  127.0.0.1 - - [20/May/2025 15:46:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-20 15:46:50,469  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    print(f"加载的列名: {columns_with_index}")  # 添加日志
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    print(f"加载列名错误: {str(e)}")  # 添加错误日志
+OSError: [Errno 22] Invalid argument
+2025-05-20 15:46:50,471  INFO  127.0.0.1 - - [20/May/2025 15:46:50] "[35m[1mGET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 15:48:52,350  INFO  127.0.0.1 - - [20/May/2025 15:48:52] "GET / HTTP/1.1" 200 -
+2025-05-20 15:48:52,909  INFO  127.0.0.1 - - [20/May/2025 15:48:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-20 15:48:54,026  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    ]
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    except Exception as e:
+OSError: [Errno 22] Invalid argument
+2025-05-20 15:48:54,028  INFO  127.0.0.1 - - [20/May/2025 15:48:54] "[35m[1mGET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 15:49:01,686  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    ]
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    except Exception as e:
+OSError: [Errno 22] Invalid argument
+2025-05-20 15:49:01,687  INFO  127.0.0.1 - - [20/May/2025 15:49:01] "[35m[1mGET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 15:49:28,859  INFO  127.0.0.1 - - [20/May/2025 15:49:28] "GET / HTTP/1.1" 200 -
+2025-05-20 15:49:31,929  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    ]
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    except Exception as e:
+OSError: [Errno 22] Invalid argument
+2025-05-20 15:49:31,931  INFO  127.0.0.1 - - [20/May/2025 15:49:31] "[35m[1mGET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 15:49:36,895  INFO  127.0.0.1 - - [20/May/2025 15:49:36] "GET / HTTP/1.1" 200 -
+2025-05-20 15:49:37,635  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    ]
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    except Exception as e:
+OSError: [Errno 22] Invalid argument
+2025-05-20 15:49:37,635  INFO  127.0.0.1 - - [20/May/2025 15:49:37] "[35m[1mGET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 15:53:16,614  INFO  127.0.0.1 - - [20/May/2025 15:53:16] "GET / HTTP/1.1" 200 -
+2025-05-20 15:53:27,457  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    ]
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    except Exception as e:
+OSError: [Errno 22] Invalid argument
+2025-05-20 15:53:27,458  INFO  127.0.0.1 - - [20/May/2025 15:53:27] "[35m[1mGET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 15:53:42,741  INFO  127.0.0.1 - - [20/May/2025 15:53:42] "GET / HTTP/1.1" 200 -
+2025-05-20 15:53:43,341  INFO  127.0.0.1 - - [20/May/2025 15:53:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-20 15:55:46,223  INFO  127.0.0.1 - - [20/May/2025 15:55:46] "GET / HTTP/1.1" 200 -
+2025-05-20 15:55:46,778  INFO  127.0.0.1 - - [20/May/2025 15:55:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-20 15:55:47,323  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    ]
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    except Exception as e:
+OSError: [Errno 22] Invalid argument
+2025-05-20 15:55:47,324  INFO  127.0.0.1 - - [20/May/2025 15:55:47] "[35m[1mGET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 15:59:16,249  INFO  127.0.0.1 - - [20/May/2025 15:59:16] "GET / HTTP/1.1" 200 -
+2025-05-20 15:59:20,740  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    ]
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    except Exception as e:
+OSError: [Errno 22] Invalid argument
+2025-05-20 15:59:20,742  INFO  127.0.0.1 - - [20/May/2025 15:59:20] "[35m[1mGET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 16:01:16,395  INFO  127.0.0.1 - - [20/May/2025 16:01:16] "GET / HTTP/1.1" 200 -
+2025-05-20 16:01:31,244  INFO  127.0.0.1 - - [20/May/2025 16:01:31] "GET / HTTP/1.1" 200 -
+2025-05-20 16:01:31,796  INFO  127.0.0.1 - - [20/May/2025 16:01:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-20 16:01:32,619  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    ]
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    except Exception as e:
+OSError: [Errno 22] Invalid argument
+2025-05-20 16:01:32,621  INFO  127.0.0.1 - - [20/May/2025 16:01:32] "[35m[1mGET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 16:01:55,933  INFO  127.0.0.1 - - [20/May/2025 16:01:55] "GET / HTTP/1.1" 200 -
+2025-05-20 16:01:56,481  INFO  127.0.0.1 - - [20/May/2025 16:01:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-20 16:02:05,656  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    ]
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    except Exception as e:
+OSError: [Errno 22] Invalid argument
+2025-05-20 16:02:05,656  INFO  127.0.0.1 - - [20/May/2025 16:02:05] "[35m[1mGET /columns?path=database/zx_processed_黄金_day_processed.csv HTTP/1.1[0m" 500 -
+2025-05-20 16:02:16,897  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    ]
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    except Exception as e:
+OSError: [Errno 22] Invalid argument
+2025-05-20 16:02:16,898  INFO  127.0.0.1 - - [20/May/2025 16:02:16] "[35m[1mGET /columns?path=database/processed_铜_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 16:02:23,025  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    ]
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    except Exception as e:
+OSError: [Errno 22] Invalid argument
+2025-05-20 16:02:23,026  INFO  127.0.0.1 - - [20/May/2025 16:02:23] "[35m[1mGET /columns?path=database/processed_铜_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 16:05:16,844  INFO  127.0.0.1 - - [20/May/2025 16:05:16] "GET / HTTP/1.1" 200 -
+2025-05-20 16:05:17,904  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    ]
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    except Exception as e:
+OSError: [Errno 22] Invalid argument
+2025-05-20 16:05:17,904  INFO  127.0.0.1 - - [20/May/2025 16:05:17] "[35m[1mGET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1[0m" 500 -
+2025-05-20 16:05:22,003  ERROR  Exception on /columns [GET]
+Traceback (most recent call last):
+  File "E:\Coding_path\MAA_UI\app.py", line 130, in get_columns
+    ]
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\anacondaDownloadPath\envs\GCA\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\Coding_path\MAA_UI\app.py", line 133, in get_columns
+    except Exception as e:
+OSError: [Errno 22] Invalid argument
+2025-05-20 16:05:22,004  INFO  127.0.0.1 - - [20/May/2025 16:05:22] "[35m[1mGET /columns?path=database/zx_processed_黄金_day.csv HTTP/1.1[0m" 500 -

@@ -5,7 +5,10 @@ import numpy as np
 
 def setup_device(device):
     if isinstance(device, list) and len(device) == 1:
-        device = torch.device(f'cuda:{device[0]}')
+        if device[0] == 'cpu':
+            device = torch.device('cpu')
+        else:
+            device = torch.device(f'cuda:{device[0]}')
     else:
         device = None
 

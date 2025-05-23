@@ -245,7 +245,6 @@ def validate_with_label(model, val_x, val_y, val_labels):
         return mse_loss, acc
 
 
-
 def print_metrics(train_metrics_list, val_metrics_list):
     print("📊 回测结果指标（每轮）")
     print("=" * 40)

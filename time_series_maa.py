@@ -14,6 +14,7 @@ import time
 import glob
 from utils.evaluate_visualization import *
 from utils.util import compute_logdiff
+import os
 
 def log_execution_time(func):
     """装饰器：记录函数的运行时间，并动态获取函数名"""
@@ -167,6 +168,8 @@ class MAA_time_series(MAABase):
         test_x_list = [x[train_size:] for x in x_list]
         train_y, test_y = y[:train_size], y[train_size:]
 
+        print(train_y.shape[-1])
+
         # —— 3. 对 train/test x 和 y 做对数差分 ——
         if log_diff:
             train_x_list = [compute_logdiff(x) for x in train_x_list]
@@ -284,7 +287,7 @@ class MAA_time_series(MAABase):
                 batch_size=self.batch_size,
                 shuffle=shuffle_flag,
                 generator=torch.manual_seed(self.seed),
-                drop_last=True  # 丢弃最后一个不足 batch size 的数据
+                drop_last=True,  # 丢弃最后一个不足 batch size 的数据
             )
             self.dataloaders.append(dataloader)
 
@@ -410,7 +413,10 @@ class MAA_time_series(MAABase):
 
         print("Start predicting with all generators..")
         best_model_state = [None for _ in range(self.N)]
-        current_path = os.path.join(self.ckpt_path, "generators")
+        
+        # 正确组合 ckpt_dir 和 ckpt_path 来获取检查点基础目录
+        base_ckpt_dir = os.path.join(self.ckpt_dir, self.ckpt_path)
+        current_path = os.path.join(base_ckpt_dir, "generators")
 
         for i, gen in enumerate(self.generators):
             gen_name = type(gen).__name__
@@ -450,9 +456,15 @@ class MAA_time_series(MAABase):
         csv_paths = glob.glob(os.path.join(csv_save_dir, '*.csv'))
         all_true_series, pred_series_list, pred_labels = read_and_collect_data(csv_paths)
 
-        # 绘制密度图
-        plot_density(all_true_series, pred_series_list, pred_labels, self.output_dir, alpha=0.4,
-                     no_grid=True)
+        # 将绘图操作移到主线程中执行
+        import threading
+        if threading.current_thread() is threading.main_thread():
+            # 在主线程中执行绘图
+            plot_density(all_true_series, pred_series_list, pred_labels, self.output_dir, alpha=0.4,
+                         no_grid=True)
+        else:
+            # 在非主线程中，只保存数据，不进行绘图
+            print("警告：当前不在主线程中，跳过绘图操作")
 
         return results
 
@@ -467,3 +479,44 @@ class MAA_time_series(MAABase):
     def init_history(self):
         """初始化训练过程中的指标记录结构"""
         pass
+
+def read_and_collect_data(csv_paths):
+    """
+    读取并收集预测数据
+    
+    Args:
+        csv_paths (list): CSV文件路径列表
+        
+    Returns:
+        tuple: (真实值序列, 预测值列表, 预测标签)
+    """
+    all_true_series = []
+    pred_series_list = []
+    pred_labels = []
+    
+    for path in csv_paths:
+        if not os.path.exists(path):
+            print(f"警告: 文件不存在 {path}")
+            continue
+            
+        try:
+            # 读取CSV文件
+            df = pd.read_csv(path)
+            
+            # 提取真实值和预测值
+            true_values = df['true'].values if 'true' in df.columns else None
+            pred_values = df['pred'].values if 'pred' in df.columns else None
+            labels = df['label'].values if 'label' in df.columns else None
+            
+            if true_values is not None:
+                all_true_series.append(true_values)
+            if pred_values is not None:
+                pred_series_list.append(pred_values)
+            if labels is not None:
+                pred_labels.append(labels)
+                
+        except Exception as e:
+            print(f"读取文件 {path} 时出错: {str(e)}")
+            continue
+    
+    return all_true_series, pred_series_list, pred_labels
