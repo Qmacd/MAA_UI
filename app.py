@@ -292,7 +292,7 @@ def predict():
         params = {
             "data_path": data["input_path"],
             "output_dir": os.path.dirname(data["output_path"]),
-            "ckpt_dir": "out_put/ckpt",  # 使用默认的检查点目录
+            "ckpt_dir": data.get("ckpt_path", "out_put/ckpt"),  # 使用默认的检查点目录
             "ckpt_path": "latest",  # 默认使用最新的检查点
             "N_pairs": 3,
             "batch_size": 64,
@@ -304,7 +304,14 @@ def predict():
             "random_seed": 3407,
             "log_diff": False,
             "start_timestamp": 31,
-            "end_timestamp": -1
+            "end_timestamp": -1,
+            "generators": ["transformer", "transformer", "transformer"],
+            "discriminators": None,
+            "distill_epochs": 1,
+            "cross_finetune_epochs": 5,
+            "lr": 2e-5,
+            "train_split": 0.7,
+            "num_epochs": 1  # 预测时不需要训练，设为1
         }
 
         # 创建输出目录

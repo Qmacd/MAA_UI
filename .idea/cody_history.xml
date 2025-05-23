@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChatHistory">
+    <accountData>
+      <list>
+        <AccountData>
+          <accountId value="VXNlcjo4NDUxNzY=" />
+          <chats>
+            <list>
+              <chat>
+                <internalId value="f2570519-fff4-43b9-8f51-86ae0150cc51" />
+                <llm>
+                  <llm>
+                    <model value="anthropic/claude-3-5-sonnet-20240620" />
+                    <provider value="Anthropic" />
+                    <tags>
+                      <list>
+                        <option value="gateway" />
+                        <option value="accuracy" />
+                        <option value="recommended" />
+                        <option value="free" />
+                      </list>
+                    </tags>
+                    <title value="Claude 3.5 Sonnet" />
+                    <usage>
+                      <list>
+                        <option value="chat" />
+                        <option value="edit" />
+                      </list>
+                    </usage>
+                  </llm>
+                </llm>
+                <messages>
+                  <list>
+                    <message>
+                      <speaker value="HUMAN" />
+                      <text value="hello" />
+                    </message>
+                    <message>
+                      <speaker value="ASSISTANT" />
+                      <text value="Hello! I'm Cody, an AI coding assistant created by Sourcegraph. How can I help you with coding or development today? Whether you have questions about a specific programming language, need help debugging code, or want to discuss software design concepts, I'm here to assist. What would you like to work on?" />
+                    </message>
+                    <message>
+                      <speaker value="HUMAN" />
+                      <text value="请你根据已有的所有代码，在根目录下生成一个codyrules文件，作为整个项目的代码生成指导。" />
+                    </message>
+                    <message>
+                      <speaker value="ASSISTANT" />
+                      <text value="很抱歉，我没有访问您项目的完整代码库的权限。作为一个AI助手，我只能基于我们的对话内容来提供帮助。我无法直接查看或分析您的项目文件。&#10;&#10;不过，我可以为您提供一些关于创建codyrules文件的一般性建议：&#10;&#10;1. 文件位置：在项目的根目录下创建一个名为`codyrules`的文件。&#10;&#10;2. 文件格式：这个文件可以是纯文本格式（.txt）或Markdown格式（.md），取决于您的偏好。&#10;&#10;3. 内容结构：文件内容可以包括以下几个部分：&#10;&#10;   a. 项目概述&#10;   b. 代码风格指南&#10;   c. 命名约定&#10;   d. 文件组织结构&#10;   e. 注释规范&#10;   f. 版本控制规则&#10;   g. 测试规范&#10;   h. 依赖管理&#10;   i. 安全考虑&#10;   j. 性能优化指南&#10;&#10;4. 具体规则：根据您项目的具体需求和已有的代码风格来定制规则。&#10;&#10;5. 保持更新：随着项目的发展，定期更新这个文件。&#10;&#10;如果您能提供更多关于项目的具体信息，比如使用的编程语言、项目类型、团队规模等，我可以为您提供更加针对性的建议。" />
+                    </message>
+                    <message>
+                      <speaker value="HUMAN" />
+                      <text value="你可以直接修改我的代码吗" />
+                    </message>
+                    <message>
+                      <speaker value="ASSISTANT" />
+                      <text value="作为一个AI助手，我没有直接访问或修改您的代码库的能力。我只能基于您提供给我的信息来提供建议和指导。&#10;&#10;如果您想让我帮助修改特定的代码，您需要将相关代码片段粘贴到我们的对话中。然后，我可以分析这段代码，并提供修改建议或改进的代码版本。&#10;&#10;例如，如果您有一段特定的代码需要优化或修复，您可以这样做：&#10;&#10;1. 将代码粘贴到对话中&#10;2. 解释您想要达到的目标或遇到的问题&#10;3. 我会分析代码并提供建议或修改后的版本&#10;&#10;请记住，任何代码修改都应该在您的开发环境中进行测试，以确保它们能够正常工作并满足您的需求。&#10;&#10;如果您有特定的代码段需要帮助，请随时分享，我会尽力协助您。" />
+                    </message>
+                  </list>
+                </messages>
+                <updatedAt value="2025-05-09T14:05:36.1093009" />
+              </chat>
+              <chat>
+                <internalId value="937500d6-bfb7-4541-b55c-4c431585706e" />
+                <llm>
+                  <llm>
+                    <model value="anthropic/claude-3-5-sonnet-20240620" />
+                    <provider value="Anthropic" />
+                    <tags>
+                      <list>
+                        <option value="gateway" />
+                        <option value="accuracy" />
+                        <option value="recommended" />
+                        <option value="free" />
+                      </list>
+                    </tags>
+                    <title value="Claude 3.5 Sonnet" />
+                    <usage>
+                      <list>
+                        <option value="chat" />
+                        <option value="edit" />
+                      </list>
+                    </usage>
+                  </llm>
+                </llm>
+              </chat>
+              <chat>
+                <internalId value="298521e8-00c3-4fe8-8869-610f4d738bef" />
+                <llm>
+                  <llm>
+                    <model value="anthropic/claude-3-5-sonnet-20240620" />
+                    <provider value="Anthropic" />
+                    <tags>
+                      <list>
+                        <option value="gateway" />
+                        <option value="accuracy" />
+                        <option value="recommended" />
+                        <option value="free" />
+                      </list>
+                    </tags>
+                    <title value="Claude 3.5 Sonnet" />
+                    <usage>
+                      <list>
+                        <option value="chat" />
+                        <option value="edit" />
+                      </list>
+                    </usage>
+                  </llm>
+                </llm>
+              </chat>
+              <chat>
+                <internalId value="a1f1d0cd-1e47-4f2d-ae23-88b6344a3c2a" />
+                <llm>
+                  <llm>
+                    <model value="anthropic/claude-3-5-sonnet-20240620" />
+                    <provider value="Anthropic" />
+                    <tags>
+                      <list>
+                        <option value="gateway" />
+                        <option value="accuracy" />
+                        <option value="recommended" />
+                        <option value="free" />
+                      </list>
+                    </tags>
+                    <title value="Claude 3.5 Sonnet" />
+                    <usage>
+                      <list>
+                        <option value="chat" />
+                        <option value="edit" />
+                      </list>
+                    </usage>
+                  </llm>
+                </llm>
+              </chat>
+              <chat>
+                <internalId value="400c708a-ac55-4ec2-94d5-6e5049f93b52" />
+                <llm>
+                  <llm>
+                    <model value="anthropic/claude-3-5-sonnet-20240620" />
+                    <provider value="Anthropic" />
+                    <tags>
+                      <list>
+                        <option value="gateway" />
+                        <option value="accuracy" />
+                        <option value="recommended" />
+                        <option value="free" />
+                      </list>
+                    </tags>
+                    <title value="Claude 3.5 Sonnet" />
+                    <usage>
+                      <list>
+                        <option value="chat" />
+                        <option value="edit" />
+                      </list>
+                    </usage>
+                  </llm>
+                </llm>
+              </chat>
+            </list>
+          </chats>
+          <defaultLlm>
+            <llm>
+              <model value="anthropic/claude-3-5-sonnet-20240620" />
+              <provider value="Anthropic" />
+              <tags>
+                <list>
+                  <option value="gateway" />
+                  <option value="accuracy" />
+                  <option value="recommended" />
+                  <option value="free" />
+                </list>
+              </tags>
+              <title value="Claude 3.5 Sonnet" />
+              <usage>
+                <list>
+                  <option value="chat" />
+                  <option value="edit" />
+                </list>
+              </usage>
+            </llm>
+          </defaultLlm>
+        </AccountData>
+      </list>
+    </accountData>
+  </component>
+</project>

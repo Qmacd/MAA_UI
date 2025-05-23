@@ -102,8 +102,6 @@ def train_multi_gan(args, generators, discriminators, dataloaders,
     feature_num = train_xes[0].shape[2]
     target_num = train_y.shape[-1]
 
-
-
     print("start training")
     for epoch in range(num_epochs):
         epo_start = time.time()

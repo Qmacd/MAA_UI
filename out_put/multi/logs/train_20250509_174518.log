@@ -1,0 +1,47 @@
+2025-05-09 17:45:18,392  INFO  ARGS = {
+  "data_path": "database/zx_processed_黄金_day.csv",
+  "output_dir": "out_put/multi",
+  "ckpt_dir": "out_put/ckpt",
+  "log_diff": false,
+  "feature_columns": [
+    "1-4,6-10,15-17",
+    "1-5,11-14",
+    "1-4,18-29"
+  ],
+  "target_columns": [
+    [
+      1
+    ]
+  ],
+  "start_timestamp": 31,
+  "end_timestamp": -1,
+  "window_sizes": [
+    5,
+    10,
+    15
+  ],
+  "N_pairs": 3,
+  "num_classes": 3,
+  "generators": [
+    "gru",
+    "lstm",
+    "transformer"
+  ],
+  "discriminators": null,
+  "distill_epochs": 1,
+  "cross_finetune_epochs": 5,
+  "device": [
+    0
+  ],
+  "num_epochs": 10,
+  "lr": 2e-05,
+  "batch_size": 64,
+  "train_split": 0.7,
+  "random_seed": 3407,
+  "amp_dtype": "none",
+  "mode": "train",
+  "ckpt_path": "latest"
+}
+2025-05-09 17:45:21,558  INFO  EPOCH 1 | Validation MSE: G1: 0.69387132, G2: 1.27482605, G3: 0.68559450 | Accuracy: G1: 45.72 %, G2: 53.74 %, G3: 46.91 %
+2025-05-09 17:45:23,444  INFO  EPOCH 2 | Validation MSE: G1: 0.54548740, G2: 1.20352936, G3: 0.13373683 | Accuracy: G1: 45.72 %, G2: 53.74 %, G3: 48.00 %
+2025-05-09 17:45:25,303  INFO  EPOCH 3 | Validation MSE: G1: 0.41624701, G2: 1.13114262, G3: 0.04103076 | Accuracy: G1: 45.72 %, G2: 53.74 %, G3: 45.83 %

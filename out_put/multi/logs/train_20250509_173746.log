@@ -1,0 +1,44 @@
+2025-05-09 17:37:46,007  INFO  ARGS = {
+  "data_path": "database/zx_processed_黄金_day.csv",
+  "output_dir": "out_put/multi",
+  "ckpt_dir": "out_put/ckpt",
+  "log_diff": false,
+  "feature_columns": [
+    "1-4,6-10,15-17",
+    "1-5,11-14",
+    "1-4,18-29"
+  ],
+  "target_columns": [
+    [
+      1
+    ]
+  ],
+  "start_timestamp": 31,
+  "end_timestamp": -1,
+  "window_sizes": [
+    5,
+    10,
+    15
+  ],
+  "N_pairs": 3,
+  "num_classes": 3,
+  "generators": [
+    "gru",
+    "lstm",
+    "transformer"
+  ],
+  "discriminators": null,
+  "distill_epochs": 1,
+  "cross_finetune_epochs": 5,
+  "device": [
+    0
+  ],
+  "num_epochs": 10,
+  "lr": 2e-05,
+  "batch_size": 64,
+  "train_split": 0.7,
+  "random_seed": 3407,
+  "amp_dtype": "none",
+  "mode": "train",
+  "ckpt_path": "latest"
+}
